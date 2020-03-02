@@ -17,6 +17,10 @@ public class FacebookPage {
 	@FindBy(id = "loginbutton")
 	WebElement submit ;
 	
+	@FindBy(xpath = "//div[@data-click='profile_icon']")
+	WebElement profileIcon;
+	
+	
 	public FacebookPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -35,5 +39,10 @@ public class FacebookPage {
 	public void clickLogin()
 	{
 		submit.click();
+	}
+	
+	public void clickProfileIcon()
+	{
+		profileIcon.click();
 	}
 }
