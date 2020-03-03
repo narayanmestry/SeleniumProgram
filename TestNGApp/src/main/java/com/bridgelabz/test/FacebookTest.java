@@ -1,12 +1,13 @@
 package com.bridgelabz.test;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -19,6 +20,7 @@ public class FacebookTest {
 	static FacebookPage fb = null;
 	static String nexturl;
 	static ExtentReports extent ;
+
 	@BeforeMethod
 	public void setUp() {
 //		System.setProperty("webdriver.chrome.driver",
@@ -38,7 +40,7 @@ public class FacebookTest {
 		test1.log(Status.INFO, "Start the test");
 		driver.get("https://www.facebook.com/");
 		test1.pass("Navigate to google");
-
+ 
 		driver.manage().window().maximize();
 		test1.pass("Maximize the Windows");
 
@@ -47,7 +49,7 @@ public class FacebookTest {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
-	@Test(priority = 0)
+	@Test(groups = {"facebook"})
 	public void facebookLogin() throws InterruptedException {
 		fb = new FacebookPage(driver);
 		fb.setEmail("mestryn9727@gmail.com");
@@ -56,7 +58,7 @@ public class FacebookTest {
 		nexturl = driver.getCurrentUrl();
 	}
 
-	@Test(priority = 1)
+	@Test(groups = {"facebook"})
 	public void updateProfilePhoto() throws InterruptedException {
 		driver.get(nexturl);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

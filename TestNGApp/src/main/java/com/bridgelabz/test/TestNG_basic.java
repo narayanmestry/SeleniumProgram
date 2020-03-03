@@ -57,7 +57,7 @@ public class TestNG_basic {
 		System.out.println("2. Google Search");
 	}
 
-	@Test(groups = { "title", "search" })
+	@Test(groups = { "login"})
 	public void fblogin() {
 		System.out.println("3. fb login");
 	}
@@ -83,27 +83,6 @@ public class TestNG_basic {
 //		System.out.println("Generate Report");
 	}
 
-//	
-//	@BeforeTest
-//	public void setUp() {
-//		WebDriverManager.firefoxdriver().setup();
-//		driver = new FirefoxDriver();
-//	}
-//
-//	@Test(priority = 0)
-//	public void googleSearch() {
-//		GooglePage gp = new GooglePage(driver);
-//		driver.get("https://www.google.com/");
-//		gp.setText("Facebook");
-//		gp.clickButton();
-//	}
-//
-//	
-//
-//	@AfterTest
-//	public void tearDownTest() {
-//		driver.close();
-//		System.out.println("test successfully Complete done");
-//	}
+
 
 }

@@ -1,5 +1,8 @@
 package com.bridgelabz.test;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -13,6 +16,7 @@ import com.bridgelabz.page.GooglePage;
 
 public class GoogleTest {
 	WebDriver driver;
+
 	@BeforeMethod
 	public void setUp()
 	{
@@ -24,7 +28,7 @@ public class GoogleTest {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 	
-	@Test(priority = 0)
+	@Test(groups = { "google" })
 	public void googleTitleTest()
 	{
 		
@@ -36,7 +40,7 @@ public class GoogleTest {
 		
 	}
 	
-	@Test(priority = 1)
+	@Test(groups = { "google" })
 	public void googleSearch()
 	{
 		driver.get("https://www.google.com/");
@@ -47,6 +51,7 @@ public class GoogleTest {
 	
 	}
 	
+
 	@AfterMethod
 	public void tearDown()
 	{
