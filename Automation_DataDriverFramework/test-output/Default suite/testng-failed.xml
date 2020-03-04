@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.bridgelabz.testcases.TC_001_ValidateLogin">
+      <class name="com.bridgelabz.testcases.TC_002_Registration">
         <methods>
-          <include name="check_Login"/>
           <include name="initiateDriverInstance"/>
+          <include name="checkRegistration" invocation-numbers="0 1"/>
           <include name="closeDriverInstance"/>
         </methods>
-      </class> <!-- com.bridgelabz.testcases.TC_001_ValidateLogin -->
+      </class> <!-- com.bridgelabz.testcases.TC_002_Registration -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
