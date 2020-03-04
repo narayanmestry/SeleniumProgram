@@ -23,13 +23,13 @@ public class RegisterPage {
 	}
 
 	public void enterMobileNo(String mobno) throws IOException {
-//		driver.findElement(By.cssSelector(Utility.fetchLocatorValue("register_mobileno"))).sendKeys(mobno);
-		driver.findElement(By.cssSelector("#u_0_o")).sendKeys("ieieee");
+		driver.findElement(By.xpath(Utility.fetchLocatorValue("register_mobileno"))).sendKeys(mobno);
+//		driver.findElement(By.xpath("//input[@name = 'reg_email__']")).sendKeys("ieieee");
 	}
 
 	public void enterNewPassword(String password) throws IOException {
-//		driver.findElement(By.name(Utility.fetchLocatorValue("register_password"))).sendKeys(password);
-		driver.findElement(By.name("reg_passwd__")).sendKeys("DDDDDD");
+		driver.findElement(By.xpath(Utility.fetchLocatorValue("register_password"))).sendKeys(password);
+//		driver.findElement(By.name("reg_passwd__")).sendKeys("DDDDDD");
 	}
 
 }
