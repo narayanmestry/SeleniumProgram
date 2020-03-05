@@ -6,7 +6,7 @@
       <class name="com.bridgelabz.testcases.TC_002_Registration">
         <methods>
           <include name="initiateDriverInstance"/>
-          <include name="checkRegistration" invocation-numbers="0 1"/>
+          <include name="checkRegistration"/>
           <include name="closeDriverInstance"/>
         </methods>
       </class> <!-- com.bridgelabz.testcases.TC_002_Registration -->
