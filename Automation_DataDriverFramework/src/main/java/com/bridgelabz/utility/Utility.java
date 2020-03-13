@@ -7,13 +7,12 @@ import java.util.Properties;
 public class Utility {
 
 	/**
-	 * @param key
-	 * @return Object
+	 * @param key : reffer the value in Properties file
+	 * @return Object : value in Properties file releted to key
 	 * @throws IOException
 	 */
-
-	public static Object fetchPropertyValue(String key) throws IOException {
-		// key reffer the value in Properties file
+	public static Object fetchPropertyValue(String key) throws IOException {  
+		
 		FileInputStream file = new FileInputStream("./config/config.properties");
 
 		// We have Properties class to fetch Properties value
@@ -22,12 +21,10 @@ public class Utility {
 		return property.get(key);
 	}
 
-	
-	
 	/**
-	 * @param key
-	 * @return
-	 * @throws IOException
+	 * @param key : reffer the value in Properties file
+	 * @return Locatorvalue to find the element
+ 	 * @throws IOException
 	 */
 	public static String fetchLocatorValue(String key) throws IOException {
 		// File For get Locator of WebElement

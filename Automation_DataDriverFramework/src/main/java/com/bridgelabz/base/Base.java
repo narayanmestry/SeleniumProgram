@@ -10,9 +10,15 @@ import org.testng.annotations.BeforeMethod;
 import com.bridgelabz.utility.Utility;
 
 // Base class used to initiate driver instance 
+
 public class Base {
+	
 	public WebDriver driver;
 
+	/**
+	 * @throws IOException
+	 * initiateDriverInstance() : initiate the Browser 
+	 */
 	@BeforeMethod
 	public void initiateDriverInstance() throws IOException {
 		// we are going to make flexible driver
@@ -37,6 +43,11 @@ public class Base {
 //		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 	}
 
+	
+	
+	/**
+	 * closeDriverInstance() : close the Browser 
+	 */
 	@AfterMethod
 	public void closeDriverInstance() {
 		driver.close();
