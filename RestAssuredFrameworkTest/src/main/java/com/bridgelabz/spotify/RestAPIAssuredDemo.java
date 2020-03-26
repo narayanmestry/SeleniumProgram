@@ -11,11 +11,16 @@ import junit.framework.Assert;
 
 public class RestAPIAssuredDemo {
 		
-	//@Test
+	// user id : fknzgyywczm8ihd1ne5rzbdc4
+	
+	/**
+	 * Description : to get user Profile . 
+	 */
+//	@Test
 	public void GetUserProfile()	//GET
 	{
 		// specify the  base URI to Restful service 
-		RestAssured.baseURI ="https://api.spotify.com/v1/users/";
+		RestAssured.baseURI = "https://api.spotify.com/v1/users";
 		System.out.println("1."+RestAssured.baseURI);
 		
 		// get the specification of a request that i going to sent to the server
@@ -23,19 +28,32 @@ public class RestAPIAssuredDemo {
 		System.out.println("3."+httpRequest);
 		
 		// pass the header
-		httpRequest.header("Authorization","Authorization: Bearer BQDL5FnVZvq8umqswjKxa3315wuiUEn53VTEV9KsVo1iKyCqTapH5XSqsu06LHjK8gwGROuVuslyMQ-Pf5F2nCG4y5LO9O2MKB4NptrYGYz330rhKvg3LkkHwUfYbBYrzlJjLd44bcFW-GdLRQsqEo2pxLQzJ4hhfljB27a6RdtrVm136uUULjABX-kRXwVEyCJUwV-fKscmSlxXd53IYoWCwvu55_pYeQB59TJEXtN2mjFp9IM6hf-G1RTespZInLlDSsydMQqEsxHlhVOsWjnAWRStsg");
+		httpRequest.header("Authorization","Bearer BQAQvp6b7-Ft5iHLdVVFQswc_2L_rc66ie3dZC8v8oCtJT8-9cBhqLhUst9iznwOQq7wZ3GRYEHwRWnPIliXi3o-QC1XjYOyrSb7tLGgHykI4FtW18t7nlqswjC8o275PCgW3ShBMfxBcxP-D-hqs9DT-6LfeuzocYoPmdNxPurm90y9U452-eYchaaaMyDTuwiZKtZxI_gsEYIHNaqrSQjt7yM9C5p8u_ucTE3f2H3uST6dchuD5RKlSnlwYQ-ki1aMJbKyPsWeWpn6lKjYzsb1JDEqLQ");
 		
 		// get the response by making request to the  server by using  httpRequest
-		Response response = httpRequest.request(Method.GET, "/lbio38a051b0sgxuiiupx3lly");
-	
+		Response response = httpRequest.request(Method.GET, "/fknzgyywczm8ihd1ne5rzbdc4");
+		
 		// here we get response 
-		String responseBody = response.getBody().asString();
-
+		String responseBody = response.getBody().asString();lic 
+		System.out.println("Success...........")	;
+		
 		System.out.println("Response Body is =>  " + responseBody);
 
 	}
+	
+
+	
+	
+	
+	public void getPlayList()
+	{
 		
-	//@Test
+	}
+	
+	
+	
+	
+//	@Test
 	public void createPlaylist()		//POST
 	{
 		System.out.println("1."+RestAssured.baseURI);
@@ -55,14 +73,14 @@ public class RestAPIAssuredDemo {
 		
 		// add the header to request
 		httpRequest.header("Content-Type","application/json");
-		httpRequest.header("Authorization","Bearer BQDhZKuNfKhJs8fV-VFuaJci_g3d-9IYgCQwuOJ6cBjR2IAwvSS64nzHgIZKjB4bW_lT9k6EOOA59am7R184XIBR-wnklMO5eGI4N3YKVNbK2G1NwVv0hPc5f7PpPL7rMuTgJ4LBbjLW75Y-kKV1uk7kLuCR8jvOVfnLG_NbamMVXUWTGpXT8VHEyDU2yVgqTu862tcBFggPO94F-gezXoDZhMsQpksxxVWr-XDeY5_njMfar6uIUpcmosv9cZUdfuNmOrUYz5ITsFbIOeqUD9khhzcHaw");
+		httpRequest.header("Authorization","Bearer BQC7iEYRVYR9MUhoVUz3B66TYIYjaw6hS4aZC4hDD8_2m9nmrZs16X24wsZ0VuKc3cgEXgceJfkujOV_lczpigd1DZOhv8v4fK85vv_VZgp1vDPV0VzcbvRxbcELgvVJ5_xiyIQMn3m0gqShsrNOT0C81v35jVQjUvCdmsazVOi0W2evobHlJFc1ojvkh3Hd8zxWpwKb51EuI25SYu71bMQLeYmYpQjZBZYJS_e_ZV0RPsmeSgpqTfa9K2N20khAOJrW-NBOV-NA62bEJfi6FLfzoPEuEA");
 		
 		
 		// add the json to to body of request
 		httpRequest.body(requestParam.toJSONString());
 		
 		// post request and check response 
-		Response response = httpRequest.post("/lbio38a051b0sgxuiiupx3lly/playlists");
+		Response response = httpRequest.post("/fknzgyywczm8ihd1ne5rzbdc4/playlists");
 		
 		
 		// we validate the Response 
@@ -76,7 +94,7 @@ public class RestAPIAssuredDemo {
 	@Test
 	public void updatePlayList()
 	{
-		String playlist_Id = "58j8F8hlNVRW6PR8WwbLSc";
+		String playlist_Id = "4yJkHzLrt8kEIKSUbHVLqo";
 		
 		RestAssured.baseURI = "https://api.spotify.com/v1/playlists";
 		
@@ -84,8 +102,8 @@ public class RestAPIAssuredDemo {
 		
 		// create JSONObject and pass the parameter 
 		JSONObject requestParam = new JSONObject();
-		requestParam.put("name","Hindi100");
-		requestParam.put("description","Hindi Playlist....");
+		requestParam.put("name","chetan100");
+		requestParam.put("description","chetan Playlist....");
 		requestParam.put("public","true");
 		
 	
@@ -101,4 +119,6 @@ public class RestAPIAssuredDemo {
 	}
 	
 	
-}
+}		
+//RestAssured.baseURI = "https://api.spotify.com/v1/users";
+
