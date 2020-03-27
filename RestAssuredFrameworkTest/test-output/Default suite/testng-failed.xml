@@ -5,7 +5,7 @@
     <classes>
       <class name="com.bridgelabz.spotify.RestAPIAssuredDemo">
         <methods>
-          <include name="createPlaylist"/>
+          <include name="getPlaylistTracks"/>
         </methods>
       </class> <!-- com.bridgelabz.spotify.RestAPIAssuredDemo -->
     </classes>
